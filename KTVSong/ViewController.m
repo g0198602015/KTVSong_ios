@@ -26,7 +26,9 @@
     self.searchController.searchResultsUpdater = self;
     self.searchController.dimsBackgroundDuringPresentation = false;
     [self.searchController.searchBar sizeToFit];
-    self.tableView.tableHeaderView = self.searchController.searchBar;
+   // self.tableView.tableHeaderView = self.searchController.searchBar;
+    self.navigationItem.titleView = self.searchController.searchBar;
+    self.searchController.hidesNavigationBarDuringPresentation = NO;
     recipes = @[@"A", @"B", @"C", @"D"];
     thumbnails = @[@"creme_brelee.jpg",@"dingfangweishi.png",@"userImg.png",@"creme_brelee.jpg"];
     // Do any additional setup after loading the view, typically from a nib.
@@ -47,7 +49,7 @@
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if (self.searchController.active)
+    if (self.searchController.active && ![self.searchController.searchBar.text isEqualToString:@""])
         return searchResult.count;
     return [recipes count];
 }
@@ -64,7 +66,7 @@
     }
     //cell.nameLabel.text = [recipes objectAtIndex:indexPath.row];
     id object = nil;
-    if (self.searchController.active)
+    if (self.searchController.active && ![self.searchController.searchBar.text isEqualToString:@""])
         object = searchResult;
     else
         object = recipes;
