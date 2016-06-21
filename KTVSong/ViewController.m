@@ -28,6 +28,8 @@
     [self.searchController.searchBar sizeToFit];
    // self.tableView.tableHeaderView = self.searchController.searchBar;
     self.navigationItem.titleView = self.searchController.searchBar;
+    //UINavigationControllerItem
+
     self.searchController.hidesNavigationBarDuringPresentation = NO;
     recipes = @[@"A", @"B", @"C", @"D"];
     thumbnails = @[@"creme_brelee.jpg",@"dingfangweishi.png",@"userImg.png",@"creme_brelee.jpg"];

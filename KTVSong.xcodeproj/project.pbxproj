@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		021089721D192146008918DA /* SegmentedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 021089711D192146008918DA /* SegmentedButton.m */; };
 		02F739E91D0F9ACE00D295AF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F739E81D0F9ACE00D295AF /* main.m */; };
 		02F739EC1D0F9ACE00D295AF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F739EB1D0F9ACE00D295AF /* AppDelegate.m */; };
 		02F739EF1D0F9ACE00D295AF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F739EE1D0F9ACE00D295AF /* ViewController.m */; };
@@ -18,9 +19,12 @@
 		02F73A061D0FAA5800D295AF /* userImg.png in Resources */ = {isa = PBXBuildFile; fileRef = 02F73A041D0FAA5800D295AF /* userImg.png */; };
 		02F73A081D0FAC3400D295AF /* SimpleTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02F73A071D0FAC3400D295AF /* SimpleTableCell.xib */; };
 		02F73A0B1D0FAFEC00D295AF /* SimpleTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F73A0A1D0FAFEC00D295AF /* SimpleTableCell.m */; };
+		02FB098A1D17FFFF00D39892 /* SearchQuickCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = 02FB09891D17FFFF00D39892 /* SearchQuickCondition.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		021089701D192146008918DA /* SegmentedButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SegmentedButton.h; sourceTree = "<group>"; };
+		021089711D192146008918DA /* SegmentedButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SegmentedButton.m; sourceTree = "<group>"; };
 		02F739E41D0F9ACE00D295AF /* KTVSong.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KTVSong.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02F739E81D0F9ACE00D295AF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		02F739EA1D0F9ACE00D295AF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -37,6 +41,8 @@
 		02F73A071D0FAC3400D295AF /* SimpleTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SimpleTableCell.xib; sourceTree = "<group>"; };
 		02F73A091D0FAFEC00D295AF /* SimpleTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleTableCell.h; sourceTree = "<group>"; };
 		02F73A0A1D0FAFEC00D295AF /* SimpleTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleTableCell.m; sourceTree = "<group>"; };
+		02FB09881D17FFFF00D39892 /* SearchQuickCondition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchQuickCondition.h; sourceTree = "<group>"; };
+		02FB09891D17FFFF00D39892 /* SearchQuickCondition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchQuickCondition.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +75,8 @@
 		02F739E61D0F9ACE00D295AF /* KTVSong */ = {
 			isa = PBXGroup;
 			children = (
+				021089701D192146008918DA /* SegmentedButton.h */,
+				021089711D192146008918DA /* SegmentedButton.m */,
 				02F739FE1D0FA46400D295AF /* images */,
 				02F739EA1D0F9ACE00D295AF /* AppDelegate.h */,
 				02F739EB1D0F9ACE00D295AF /* AppDelegate.m */,
@@ -82,6 +90,8 @@
 				02F73A071D0FAC3400D295AF /* SimpleTableCell.xib */,
 				02F73A091D0FAFEC00D295AF /* SimpleTableCell.h */,
 				02F73A0A1D0FAFEC00D295AF /* SimpleTableCell.m */,
+				02FB09881D17FFFF00D39892 /* SearchQuickCondition.h */,
+				02FB09891D17FFFF00D39892 /* SearchQuickCondition.m */,
 			);
 			path = KTVSong;
 			sourceTree = "<group>";
@@ -179,9 +189,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				021089721D192146008918DA /* SegmentedButton.m in Sources */,
 				02F739EF1D0F9ACE00D295AF /* ViewController.m in Sources */,
 				02F739EC1D0F9ACE00D295AF /* AppDelegate.m in Sources */,
 				02F73A0B1D0FAFEC00D295AF /* SimpleTableCell.m in Sources */,
+				02FB098A1D17FFFF00D39892 /* SearchQuickCondition.m in Sources */,
 				02F739E91D0F9ACE00D295AF /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -333,6 +345,7 @@
 				02F739FD1D0F9ACE00D295AF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

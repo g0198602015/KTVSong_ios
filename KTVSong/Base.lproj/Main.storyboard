@@ -6,6 +6,41 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
+        <!--Search Quick Condition-->
+        <scene sceneID="AVM-SC-DWa">
+            <objects>
+                <viewController id="8Im-VN-wsr" customClass="SearchQuickCondition" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="adu-ws-hlj"/>
+                        <viewControllerLayoutGuide type="bottom" id="mFj-y7-L33"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Xjt-0u-yAc">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nI0-af-ky9" customClass="SegmentedButton">
+                                <rect key="frame" x="180" y="20" width="241" height="52"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="bCa-FM-WVk"/>
+                                    <constraint firstAttribute="width" constant="241" id="xSb-5n-djn"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="nI0-af-ky9" firstAttribute="centerX" secondItem="Xjt-0u-yAc" secondAttribute="centerX" id="25R-dC-Y6t"/>
+                            <constraint firstItem="nI0-af-ky9" firstAttribute="top" secondItem="adu-ws-hlj" secondAttribute="bottom" id="dKY-17-1Yn"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="segmentedButtonView" destination="nI0-af-ky9" id="Iuv-j2-VD9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C2Y-aK-oIz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1126" y="1175"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -18,21 +53,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="s75-Hh-OQ4">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="494"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="s75-Hh-OQ4">
+                                <rect key="frame" x="0.0" y="106" width="600" height="494"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="GrL-Q6-fhh"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="usN-ML-xSL"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ZD-Fr-3sY">
+                                <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="8Im-VN-wsr" kind="modal" id="tJ8-bS-jax"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="s75-Hh-OQ4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="AT6-C9-5e7"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="s75-Hh-OQ4" secondAttribute="bottom" constant="106" id="Mbf-yt-nqw"/>
-                            <constraint firstItem="s75-Hh-OQ4" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Pko-du-yeh"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="s75-Hh-OQ4" secondAttribute="trailing" constant="-20" id="Ree-om-9Ck"/>
+                            <constraint firstItem="7ZD-Fr-3sY" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Oku-DN-CNd"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="7ZD-Fr-3sY" secondAttribute="trailing" constant="-20" id="a28-fv-cHl"/>
+                            <constraint firstItem="7ZD-Fr-3sY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="vlP-Dj-O4S"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="qC4-jU-v4a"/>
