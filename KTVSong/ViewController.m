@@ -88,4 +88,8 @@
         [self.searchController.searchBar removeFromSuperview];
     }
 }
+- (IBAction)searchButtonDown:(id)sender {
+    [self performSegueWithIdentifier:@"ResultSegue" sender:self];
+}
+
 @end

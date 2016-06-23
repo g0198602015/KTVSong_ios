@@ -12,8 +12,9 @@
 {
     
 }
+- (IBAction)searchButtonDown:(id)sender;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic)UISearchController *searchController;
-
+@property (weak, nonatomic) IBOutlet UIButton *jumpButton;
 @end
 
