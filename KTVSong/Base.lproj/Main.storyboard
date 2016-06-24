@@ -53,33 +53,60 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Singer or Song" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oyh-ma-tMU">
+                                <rect key="frame" x="209" y="92" width="183" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fxV-pN-yGR">
+                                <rect key="frame" x="338" y="285" width="46" height="30"/>
+                                <state key="normal" title="More"/>
+                                <connections>
+                                    <action selector="moreButtonTouchDown:" destination="BYZ-38-t0r" eventType="touchDown" id="IN6-E3-cC7"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="isU-iZ-mVa" customClass="SegmentedButton">
+                                <rect key="frame" x="180" y="130" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" id="7S3-Hi-jA9"/>
+                                </constraints>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ZD-Fr-3sY">
-                                <rect key="frame" x="0.0" y="64" width="600" height="44"/>
-                                <state key="normal" title="Button"/>
+                                <rect key="frame" x="209" y="323" width="183" height="43"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="43" id="KbX-P1-xDk"/>
+                                </constraints>
+                                <state key="normal" title="Search">
+                                    <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="searchButtonDown:" destination="BYZ-38-t0r" eventType="touchDown" id="niQ-pf-vbm"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="s75-Hh-OQ4">
-                                <rect key="frame" x="0.0" y="106" width="600" height="494"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="GrL-Q6-fhh"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="usN-ML-xSL"/>
-                                </connections>
-                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="7ZD-Fr-3sY" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Oku-DN-CNd"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="7ZD-Fr-3sY" secondAttribute="trailing" constant="-20" id="a28-fv-cHl"/>
-                            <constraint firstItem="7ZD-Fr-3sY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="vlP-Dj-O4S"/>
+                            <constraint firstItem="isU-iZ-mVa" firstAttribute="trailing" secondItem="oyh-ma-tMU" secondAttribute="trailing" id="2ER-RS-fSy"/>
+                            <constraint firstItem="fxV-pN-yGR" firstAttribute="bottom" secondItem="7ZD-Fr-3sY" secondAttribute="top" id="35Q-Kd-5bo"/>
+                            <constraint firstItem="7ZD-Fr-3sY" firstAttribute="top" secondItem="isU-iZ-mVa" secondAttribute="bottom" constant="25" id="4ng-90-Atl"/>
+                            <constraint firstItem="7ZD-Fr-3sY" firstAttribute="trailing" secondItem="oyh-ma-tMU" secondAttribute="trailing" id="87s-IJ-cDE"/>
+                            <constraint firstItem="7ZD-Fr-3sY" firstAttribute="leading" secondItem="oyh-ma-tMU" secondAttribute="leading" id="CRi-qD-SQJ"/>
+                            <constraint firstItem="oyh-ma-tMU" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="27" id="N9f-mJ-Ef4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="oyh-ma-tMU" secondAttribute="trailing" constant="25" id="Uqk-XL-2bp"/>
+                            <constraint firstItem="isU-iZ-mVa" firstAttribute="leading" secondItem="oyh-ma-tMU" secondAttribute="leading" id="V22-di-yaL"/>
+                            <constraint firstItem="oyh-ma-tMU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="25" id="c3X-a9-hwI"/>
+                            <constraint firstItem="isU-iZ-mVa" firstAttribute="top" secondItem="oyh-ma-tMU" secondAttribute="bottom" id="siC-XL-gjC"/>
+                            <constraint firstItem="fxV-pN-yGR" firstAttribute="trailing" secondItem="oyh-ma-tMU" secondAttribute="trailing" id="zln-U0-cO9"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="qC4-jU-v4a"/>
                     <connections>
                         <outlet property="jumpButton" destination="7ZD-Fr-3sY" id="74z-UG-XV5"/>
-                        <outlet property="tableView" destination="s75-Hh-OQ4" id="tyk-GT-hJj"/>
+                        <outlet property="moreButton" destination="fxV-pN-yGR" id="onm-tx-7hw"/>
+                        <outlet property="segmentedButtonView" destination="isU-iZ-mVa" id="E6U-li-jUe"/>
+                        <outlet property="viewHeight" destination="7S3-Hi-jA9" id="et0-nq-JrE"/>
                         <segue destination="8Im-VN-wsr" kind="show" identifier="ResultSegue" id="4OA-Z4-10a"/>
                     </connections>
                 </viewController>

@@ -22,14 +22,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     searchResult = [[NSMutableArray alloc] init];
-    self.searchController = [[UISearchController alloc]initWithSearchResultsController:nil];
-    self.searchController.searchResultsUpdater = self;
-    self.searchController.dimsBackgroundDuringPresentation = false;
-    [self.searchController.searchBar sizeToFit];
-   // self.tableView.tableHeaderView = self.searchController.searchBar;
-    self.navigationItem.titleView = self.searchController.searchBar;
-    //UINavigationControllerItem
-
+    /** 
+     Search Bar 
+     **/
+    //self.searchController = [[UISearchController alloc]initWithSearchResultsController:nil];
+    //self.searchController.searchResultsUpdater = self;
+    //self.searchController.dimsBackgroundDuringPresentation = false;
+    //[self.searchController.searchBar sizeToFit];
+    //self.navigationItem.titleView = self.searchController.searchBar;
+  
+    [[self segmentedButtonView] initWithTitles:[NSArray arrayWithObjects:@"1", @"2", @"3", @"4", @"5", nil] buttonTintNormal:[UIColor colorWithWhite:.9 alpha:1] buttonTintPressed:[UIColor colorWithWhite:.8 alpha:1] actionHandler:^(int buttonIndex) {
+        NSLog(@"Button pressed at index %i", buttonIndex);
+    }];
     self.searchController.hidesNavigationBarDuringPresentation = NO;
     recipes = @[@"A", @"B", @"C", @"D"];
     thumbnails = @[@"creme_brelee.jpg",@"dingfangweishi.png",@"userImg.png",@"creme_brelee.jpg"];
@@ -88,8 +92,14 @@
         [self.searchController.searchBar removeFromSuperview];
     }
 }
+- (IBAction)moreButtonTouchDown:(id)sender {
+    _viewHeight.constant = 30;
+}
+
 - (IBAction)searchButtonDown:(id)sender {
-    [self performSegueWithIdentifier:@"ResultSegue" sender:self];
+    //[self performSegueWithIdentifier:@"ResultSegue" sender:self];
+    [[self segmentedButtonView] setHidden:NO];
+    _viewHeight.constant = 0;
 }
 
 @end
