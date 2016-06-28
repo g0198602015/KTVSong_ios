@@ -17,32 +17,38 @@
     NSArray *recipes;
     NSArray *thumbnails;
     NSMutableArray *searchResult;
+    BOOL bMore;
+    int moreUIStackViewHeight;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     searchResult = [[NSMutableArray alloc] init];
-    /** 
-     Search Bar 
-     **/
-    //self.searchController = [[UISearchController alloc]initWithSearchResultsController:nil];
-    //self.searchController.searchResultsUpdater = self;
-    //self.searchController.dimsBackgroundDuringPresentation = false;
-    //[self.searchController.searchBar sizeToFit];
-    //self.navigationItem.titleView = self.searchController.searchBar;
-  
-    [[self segmentedButtonView] initWithTitles:[NSArray arrayWithObjects:@"1", @"2", @"3", @"4", @"5", nil] buttonTintNormal:[UIColor colorWithWhite:.9 alpha:1] buttonTintPressed:[UIColor colorWithWhite:.8 alpha:1] actionHandler:^(int buttonIndex) {
-        NSLog(@"Button pressed at index %i", buttonIndex);
-    }];
+    int width = self.jumpButton.frame.size.width;
     self.searchController.hidesNavigationBarDuringPresentation = NO;
+    bMore = NO;
     recipes = @[@"A", @"B", @"C", @"D"];
     thumbnails = @[@"creme_brelee.jpg",@"dingfangweishi.png",@"userImg.png",@"creme_brelee.jpg"];
-    // Do any additional setup after loading the view, typically from a nib.
 }
+- (void)viewDidLayoutSubviews
+{
+    [super viewDidLayoutSubviews];
+    int width = self.jumpButton.frame.size.width;
+    if (self.moreUIStackView.frame.size.height != 0)
+        moreUIStackViewHeight = self.moreUIStackView.frame.size.height;
+    [[self sexSegmentedButton] initWithTitles:[NSArray arrayWithObjects:@"All", @"Female", @"Male", nil] buttonTintNormal:[UIColor colorWithWhite:.9 alpha:1] buttonTintPressed:[UIColor colorWithWhite:.8 alpha:1] actionHandler:^(int buttonIndex) {
+        NSLog(@"Button pressed at index %i", buttonIndex);
+    }];
+    if ([[self sexSegmentedButton] IsFinishInitial] == NO)
+    {
+        [self ShowMoreSettingView:NO];
+    }
 
+    // [self ShowMoreSettingView:NO];
+//    }
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 - (void)updateSearchResultsForSearchController:(UISearchController *)searchController
 {
@@ -93,13 +99,19 @@
     }
 }
 - (IBAction)moreButtonTouchDown:(id)sender {
-    _viewHeight.constant = 30;
+    bMore = !bMore;
+    [self ShowMoreSettingView:bMore];
 }
 
 - (IBAction)searchButtonDown:(id)sender {
-    //[self performSegueWithIdentifier:@"ResultSegue" sender:self];
-    [[self segmentedButtonView] setHidden:NO];
-    _viewHeight.constant = 0;
+
 }
 
+- (void)ShowMoreSettingView:(BOOL)show
+{
+    if (show)
+        self.moreUIStackViewHeight.constant = moreUIStackViewHeight;
+    else
+        self.moreUIStackViewHeight.constant = 0;
+}
 @end

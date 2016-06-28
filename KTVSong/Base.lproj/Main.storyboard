@@ -53,27 +53,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Singer or Song" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oyh-ma-tMU">
-                                <rect key="frame" x="209" y="92" width="183" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fxV-pN-yGR">
-                                <rect key="frame" x="338" y="285" width="46" height="30"/>
-                                <state key="normal" title="More"/>
-                                <connections>
-                                    <action selector="moreButtonTouchDown:" destination="BYZ-38-t0r" eventType="touchDown" id="IN6-E3-cC7"/>
-                                </connections>
-                            </button>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="isU-iZ-mVa" customClass="SegmentedButton">
-                                <rect key="frame" x="180" y="130" width="240" height="128"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" id="7S3-Hi-jA9"/>
-                                </constraints>
-                            </view>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ZD-Fr-3sY">
-                                <rect key="frame" x="209" y="323" width="183" height="43"/>
+                                <rect key="frame" x="198" y="286" width="183" height="43"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="43" id="KbX-P1-xDk"/>
@@ -85,28 +66,76 @@
                                     <action selector="searchButtonDown:" destination="BYZ-38-t0r" eventType="touchDown" id="niQ-pf-vbm"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fxV-pN-yGR">
+                                <rect key="frame" x="335" y="248" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="RPw-AY-ICK"/>
+                                </constraints>
+                                <state key="normal" title="More"/>
+                                <connections>
+                                    <action selector="moreButtonTouchDown:" destination="BYZ-38-t0r" eventType="touchDown" id="IN6-E3-cC7"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="aaz-f9-jvD">
+                                <rect key="frame" x="209" y="160" width="470" height="100"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1111" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7iP-kd-XO8">
+                                        <rect key="frame" x="0.0" y="0.0" width="470" height="20"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="isU-iZ-mVa" customClass="SegmentedButton">
+                                        <rect key="frame" x="0.0" y="20" width="470" height="80"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="luz-kc-fIf"/>
+                                </constraints>
+                            </stackView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Singer or Song" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oyh-ma-tMU">
+                                <rect key="frame" x="209" y="92" width="183" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="183" id="1Uc-re-qPh"/>
+                                    <constraint firstAttribute="height" constant="30" id="ptF-xM-PAK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="1Uc-re-qPh"/>
+                                    </mask>
+                                </variation>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="isU-iZ-mVa" firstAttribute="trailing" secondItem="oyh-ma-tMU" secondAttribute="trailing" id="2ER-RS-fSy"/>
-                            <constraint firstItem="fxV-pN-yGR" firstAttribute="bottom" secondItem="7ZD-Fr-3sY" secondAttribute="top" id="35Q-Kd-5bo"/>
-                            <constraint firstItem="7ZD-Fr-3sY" firstAttribute="top" secondItem="isU-iZ-mVa" secondAttribute="bottom" constant="25" id="4ng-90-Atl"/>
-                            <constraint firstItem="7ZD-Fr-3sY" firstAttribute="trailing" secondItem="oyh-ma-tMU" secondAttribute="trailing" id="87s-IJ-cDE"/>
-                            <constraint firstItem="7ZD-Fr-3sY" firstAttribute="leading" secondItem="oyh-ma-tMU" secondAttribute="leading" id="CRi-qD-SQJ"/>
-                            <constraint firstItem="oyh-ma-tMU" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="27" id="N9f-mJ-Ef4"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="oyh-ma-tMU" secondAttribute="trailing" constant="25" id="Uqk-XL-2bp"/>
-                            <constraint firstItem="isU-iZ-mVa" firstAttribute="leading" secondItem="oyh-ma-tMU" secondAttribute="leading" id="V22-di-yaL"/>
-                            <constraint firstItem="oyh-ma-tMU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="25" id="c3X-a9-hwI"/>
-                            <constraint firstItem="isU-iZ-mVa" firstAttribute="top" secondItem="oyh-ma-tMU" secondAttribute="bottom" id="siC-XL-gjC"/>
-                            <constraint firstItem="fxV-pN-yGR" firstAttribute="trailing" secondItem="oyh-ma-tMU" secondAttribute="trailing" id="zln-U0-cO9"/>
+                            <constraint firstItem="7ZD-Fr-3sY" firstAttribute="leading" secondItem="oyh-ma-tMU" secondAttribute="leading" id="19g-QH-E7t"/>
+                            <constraint firstItem="aaz-f9-jvD" firstAttribute="leading" secondItem="oyh-ma-tMU" secondAttribute="leading" id="9EB-Ym-FEb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="oyh-ma-tMU" secondAttribute="trailing" constant="45" id="GXV-Pl-gwK"/>
+                            <constraint firstItem="aaz-f9-jvD" firstAttribute="trailing" secondItem="oyh-ma-tMU" secondAttribute="trailing" id="JsY-Jy-B9w"/>
+                            <constraint firstItem="oyh-ma-tMU" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="28" id="NSc-5E-vCU"/>
+                            <constraint firstItem="fxV-pN-yGR" firstAttribute="trailing" secondItem="aaz-f9-jvD" secondAttribute="trailing" id="PDl-iJ-wCl"/>
+                            <constraint firstItem="aaz-f9-jvD" firstAttribute="top" secondItem="oyh-ma-tMU" secondAttribute="bottom" constant="15" id="TkQ-Xu-qjI"/>
+                            <constraint firstItem="oyh-ma-tMU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="45" id="b6N-gN-06n"/>
+                            <constraint firstItem="7ZD-Fr-3sY" firstAttribute="trailing" secondItem="oyh-ma-tMU" secondAttribute="trailing" id="kOk-hq-14B"/>
+                            <constraint firstItem="fxV-pN-yGR" firstAttribute="top" secondItem="aaz-f9-jvD" secondAttribute="bottom" id="lnz-NI-a87"/>
+                            <constraint firstItem="oyh-ma-tMU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="s0u-o8-61n"/>
+                            <constraint firstItem="7ZD-Fr-3sY" firstAttribute="top" secondItem="fxV-pN-yGR" secondAttribute="bottom" id="u5D-PP-49B"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="s0u-o8-61n"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="qC4-jU-v4a"/>
                     <connections>
                         <outlet property="jumpButton" destination="7ZD-Fr-3sY" id="74z-UG-XV5"/>
                         <outlet property="moreButton" destination="fxV-pN-yGR" id="onm-tx-7hw"/>
-                        <outlet property="segmentedButtonView" destination="isU-iZ-mVa" id="E6U-li-jUe"/>
-                        <outlet property="viewHeight" destination="7S3-Hi-jA9" id="et0-nq-JrE"/>
+                        <outlet property="moreUIStackView" destination="aaz-f9-jvD" id="enn-2Q-HpY"/>
+                        <outlet property="moreUIStackViewHeight" destination="luz-kc-fIf" id="w76-vb-Rvn"/>
+                        <outlet property="sexSegmentedButton" destination="isU-iZ-mVa" id="QN9-SV-c5V"/>
                         <segue destination="8Im-VN-wsr" kind="show" identifier="ResultSegue" id="4OA-Z4-10a"/>
                     </connections>
                 </viewController>

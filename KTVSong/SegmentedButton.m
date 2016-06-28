@@ -10,11 +10,16 @@
 #import <QuartzCore/QuartzCore.h>
 
 @implementation SegmentedButton
+{
+    BOOL bIsInitial;
+}
 @synthesize buttonPressActionHandler;
 
 - (void)initWithTitles:(NSArray *)buttonTitles buttonTintNormal:(UIColor *)backgroundColorNormal buttonTintPressed:(UIColor *)backgroundColorPressed actionHandler:(void (^)(int buttonIndex))actionHandler {
     buttons = [[NSMutableArray alloc] init];
     int numberOfButtons = [buttonTitles count];
+    int width = self.frame.size.width;
+    int height = self.frame.size.height;
     for (int i = 0; i < numberOfButtons; i++) {
         UIButton *newButton = [UIButton buttonWithType:UIButtonTypeCustom];
         newButton.frame = CGRectMake(i * (self.frame.size.width/numberOfButtons), 0, self.frame.size.width/numberOfButtons, self.frame.size.height);
@@ -73,6 +78,7 @@
     self.layer.borderWidth = 1;
     self.clipsToBounds = YES;
     buttonPressActionHandler = [actionHandler copy];
+    bIsInitial = YES;
 }
 
 - (void)initWithImages:(NSArray *)buttonImages buttonTintNormal:(UIColor *)backgroundColorNormal buttonTintPressed:(UIColor *)backgroundColorPressed actionHandler:(void (^)(int buttonIndex))actionHandler {
@@ -129,6 +135,7 @@
     if (self) {
         //nothing
     }
+    bIsInitial = NO;
     return self;
 }
 
@@ -155,6 +162,11 @@
 
 - (void)setButtonPressActionHandler:(void (^)(int buttonIndex))actionHandler {
     buttonPressActionHandler = [actionHandler copy];
+}
+
+- (BOOL)IsFinishInitial
+{
+    return bIsInitial;
 }
 /*
 // Only override drawRect: if you perform custom drawing.
